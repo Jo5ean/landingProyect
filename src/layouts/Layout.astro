@@ -1,6 +1,6 @@
 ---
 export interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -8,66 +8,59 @@ const { title } = Astro.props;
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description">
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+    <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"></script>
+  </body>
 </html>
 <style is:global>
-	
-	@font-face {
-            font-family: "Museo Sans";
-            font-style: normal;
-            font-weight: 500;
-            src: local("Museo Sans"),
-                url("/fonts/MuseoSans_500.otf") format("truetype");
-        }
+  @font-face {
+    font-family: "Museo Sans";
+    font-style: normal;
+    font-weight: 500;
+    src: local("Museo Sans"), url("/fonts/MuseoSans_500.otf") format("truetype");
+  }
 
-        @font-face {
-            font-family: "Museo Sans";
-            font-style: normal;
-            font-weight: 700;
-            src: local("Museo Sans"),
-                url("/fonts/MuseoSans_700.otf") format("truetype");
-        }
+  @font-face {
+    font-family: "Museo Sans";
+    font-style: normal;
+    font-weight: 700;
+    src: local("Museo Sans"), url("/fonts/MuseoSans_700.otf") format("truetype");
+  }
 
-        @font-face {
-            font-family: "Museo Sans";
-            font-style: normal;
-            font-weight: 900;
-            src: local("Museo Sans"),
-                url("/fonts/MuseoSans_900.otf") format("truetype");
-        }
+  @font-face {
+    font-family: "Museo Sans";
+    font-style: normal;
+    font-weight: 900;
+    src: local("Museo Sans"), url("/fonts/MuseoSans_900.otf") format("truetype");
+  }
 
-        @font-face {
-            font-family: "Museo Sans";
-            font-style: normal;
-            font-weight: 300;
-            src: local("Museo Sans"),
-                url("/fonts/MuseoSans-300.otf") format("truetype");
-        }
+  @font-face {
+    font-family: "Museo Sans";
+    font-style: normal;
+    font-weight: 300;
+    src: local("Museo Sans"), url("/fonts/MuseoSans-300.otf") format("truetype");
+  }
 
-        @font-face {
-            font-family: "Museo Sans 900";
-            font-style: normal;
-            font-weight: 300;
-            src: local("Museo Sans"),
-                url("/fonts/MuseoSans_900.otf") format("truetype");
-        }
+  @font-face {
+    font-family: "Museo Sans 900";
+    font-style: normal;
+    font-weight: 300;
+    src: local("Museo Sans"), url("/fonts/MuseoSans_900.otf") format("truetype");
+  }
 
-        @font-face {
-            font-family: "Museo Sans 500";
-            font-style: normal;
-            font-weight: 300;
-            src: local("Museo Sans"),
-                url("/fonts/MuseoSans_500.otf") format("truetype");
-        }
-    
+  @font-face {
+    font-family: "Museo Sans 500";
+    font-style: normal;
+    font-weight: 300;
+    src: local("Museo Sans"), url("/fonts/MuseoSans_500.otf") format("truetype");
+  }
 </style>
