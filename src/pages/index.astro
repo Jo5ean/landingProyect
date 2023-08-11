@@ -5,6 +5,8 @@ import HeroSection from "../components/HeroSection.astro";
 import Form from "../components/Form.astro";
 import Card from "../components/Card.astro";
 import Carousel from "../components/Carousel.astro";
+import Footer from "../components/Footer.astro";
+import Accordion from "../components/Accordion.astro";
 ---
 
 <Layout title="Carreras Ucasal">
@@ -63,53 +65,54 @@ import Carousel from "../components/Carousel.astro";
     </div>
   </div>
 
-  <h2 class="bigTitle px-5 mt-5 shadow-black">
-	<span style="color: rgb(97, 96, 96)">Estudiá en tu sede</span>&nbsp;MÁS CERCANA:
-  </h2>
-  <!-- two columns -->
-  <div class="p-5 justify-center mb-5 grid md:grid-cols-2 sm:grid-cols-1 gap-4 shadow-black">
-	<!-- Columna 1: iframe -->
-	<div class="relative overflow-hidden aspect-w-16 aspect-h-9 shadow-black">
-	  <iframe src="https://www.ucasal.edu.ar/mapa_sedes/mapa_sedes_ucasal.html" allowfullscreen class="absolute inset-0 w-full h-full"></iframe>
-	</div>
-  
-	<!-- Columna 2: video --> 
-	<div class="text-center px-2 shadow-black">
-		<iframe width="100%" height="315" src="https://www.youtube.com/embed/-nLtgFKPlXg" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-	  </div>
+ <!--  use the accordion to render the cards -->
+  <div class="">
+    <h2 class="bigTitle px-5 mt-5 shadow-black">
+      <span style="color: rgb(97, 96, 96)">Conoce nuestas</span>&nbsp;CARRERAS:
+    </h2>
+    <Accordion />
   </div>
   
- 
+
   <h2 class="bigTitle px-5 mt-5 shadow-black">
-    <span style="color: rgb(97, 96, 96)">Conocé más sobre nuestros</span>&nbsp;CONVENIOS:
-    &nbsp;nacionales</h2>
-  <Carousel />
-<!-- Espacio en blanco -->
-    <div class="h-100 mt-64"></div>
+    <span style="color: rgb(97, 96, 96)">Estudiá en tu sede</span>&nbsp;MÁS
+    CERCANA:
+  </h2>
+  <!-- two columns -->
+  <div
+    class="p-5 justify-center mb-5 grid md:grid-cols-2 sm:grid-cols-1 gap-4 shadow-black"
+  >
+    <!-- Columna 1: iframe -->
+    <div class="relative overflow-hidden aspect-w-16 aspect-h-9 shadow-black">
+      <iframe
+        src="https://www.ucasal.edu.ar/mapa_sedes/mapa_sedes_ucasal.html"
+        allowfullscreen
+        class="absolute inset-0 w-full h-full"></iframe>
+    </div>
 
+    <!-- Columna 2: video -->
+    <div class="text-center px-2 shadow-black">
+      <iframe
+        width="100%"
+        height="315"
+        src="https://www.youtube.com/embed/-nLtgFKPlXg"
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </div>
+  </div>
 
- <!--  <div class="row mb-4">
-	
-		<div class="align-items-center mb-5 px-2 shadow">
-			<iframe src="/mapa_sedes/mapa_sedes_ucasal.html" style="height: 45vh;width:100%; border: 0;"
-				frameborder="0" allowfullscreen></iframe>
-		</div>
-	</div>
-	
-	<div class=" flex col-sm-12 col-md-6 text-center mb-5 px-2 shadow">
-		<iframe style="width: 100%; height: 45vh;" src="https://www.youtube.com/embed/-nLtgFKPlXg"
-			title="YouTube video player" frameborder="0"
-			allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-			allowfullscreen></iframe>
-	</div>
-   </div> -->
-
-  <!-- mapig cards to be added here -->
-  <!-- <script>
-		array.map(function (item) {
-			return <Card />
-		})
-	</script> -->
+  <div class="bg-gray-300">
+    <h2 class="bigTitle px-5 mt-5 shadow-black ">
+      <span style="color: rgb(97, 96, 96)">Conocé más sobre nuestros</span
+      >&nbsp;CONVENIOS &nbsp;NACIONALES:
+    </h2>
+    <Carousel />
+  </div>
+  <!-- Espacio en blanco -->
+  <div class="bg-grey-300 h-10">
+  <Footer />
+</div>
 </Layout>
 
 <style>
@@ -123,7 +126,7 @@ import Carousel from "../components/Carousel.astro";
     display: inline-block;
     color: #ee1818;
     font-weight: 900;
-    font-size: 35px;
+    font-size: 1.5em;
     font-family: "Museo Sans";
   }
 </style>
