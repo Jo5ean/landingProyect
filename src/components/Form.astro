@@ -39,64 +39,88 @@
 
   <div class="flex items-center justify-center">
     <form
-      id="form-section"
+    role="form" id="pedidoinfo" 
+    method="post" enctype="multipart/form-data" 
+    action="https://www-desa.ucasal.edu.ar/postulantes_mail1.php" 
+    autocomplete="on"
       class="bg-gray-200 rounded-lg p-6 shadow-md m-5 [&>div>input]:text-blue-600 [&>div>div>input]:text-blue-600 max-w-md"
     >
+    <input type="hidden" value="4" name="id_origen" id="id_origen" />
+            <!-- <input type="hidden" value=" " name="apellido" id="apellido" /> -->
+            <input type="hidden" value="postulantes" name="tabla" />
+            <input type="hidden" id="addr" name="addr" value="172.17.3.75" />
+            <input type="hidden" id="agent" name="agent" value="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36" />
+            <input type="hidden" name="utm_source" value="" />
+            <input type="hidden" name="utm_medium" value="" />
+            <input type="hidden" name="utm_term" value="" />
+            <input type="hidden" name="utm_content" value="" />
+            <input type="hidden" name="utm_campaign" value="" />
+            <input type="hidden" name="idconversion" value="" />
+            <input type="hidden" name="campaignid" value="" />
+            <input type="hidden" name="referer" value="" />
+            <input name="gclid" type="hidden" value="" />
+            <input type="hidden" name="tkp" value="/landing/enviado-distancia-2021.php">
+            <input type="hidden" name="fkp" value="/landing/enviado-distancia-2021.php?id=404">
+
       <div class="grid md:grid-cols-2 md:gap-6">
         <div class="relative z-0 w-full mb-1 group">
           <input
             type="text"
-            name="floating_first_name"
-            id="floating_first_name"
+            name="Nombre"
+            id="nombre"
             class="block  px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-            placeholder=" "
+            placeholder="Nombre"
             required
+            tabindex="1"
           />
           <label
             for="floating_first_name"
             class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-            >First name</label
+            >Nombre</label
           >
         </div>
         <div class="relative z-0 w-full mb-1 group">
           <input
             type="text"
-            name="floating_last_name"
-            id="floating_last_name"
+            name="Apellido"
+            id="apellido"
             class="block  px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-            placeholder=" "
+            placeholder="Apellido"
             required
+            tabindex="2"
           />
           <label
             for="floating_last_name"
             class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-            >Last name</label
+            >Apellido</label
           >
         </div>
       </div>
       <div class="relative z-0 w-full mb-1 group mt-2">
         <input
           type="email"
-          name="floating_email"
-          id="floating_email"
+          name="email"
+          id="email"
           class="block  px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-          placeholder=" "
+          placeholder="Escribe tu email"
           required
+          tabindex="3"
         />
         <label
           for="floating_email"
           class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-          >Email address</label
+          >Email</label
         >
       </div>
       <div class="relative z-0 w-full mb-1 group mt-2">
         <input
-          type="email"
-          name="floating_email"
-          id="floating_email"
+          type="text"
+          name="dni"
+          id="dni"
           class="block  px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-          placeholder=" "
+          placeholder="DNI Para participar en nuestras promociones"
           required
+          tabindex="4"
         />
         <label
           for="floating_email"
@@ -109,23 +133,20 @@
           for="carrera"
           class="block text-sm font-medium text-gray-500 dark:text-gray-400"
         >
-          Seleccionar Carrera
+        Seleccione Modalidad
         </label>
         <select
-          name="carrera"
-          id="carrera"
+          name="modo"
+          id="modo"
           class="block w-full mt-1  px-3 border border-gray-300 bg-white shadow-sm focus:ring-blue-600 focus:border-blue-600 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500 focus:outline-none sm:text-sm [&>option]:text-gray-500"
           required
-        
+          onchange="cambiar_modo();"
+          tabindex="5"
         >
           <!-- Opciones del select -->
-          <option value="" disabled selected>Elige una opción</option>
-          <option value="carrera1">Abogacia</option>
-          <option value="carrera2">Contador Publico</option>
-          <option value="carrera3">Maestro Mayor de Obra</option>
-          <option value="carrera4">Ingenieria en Sistemas</option>
-          <option value="carrera5">Ingenieria Industrial</option>
-          <!-- Agregar más opciones según sea necesario -->
+          <option value="" disabled selected>Seleccione Modalidad</option>
+                  <option value="1">Presencial</option>
+                  <option value="7">Distancia</option>
         </select>
       </div>
       <div class="relative z-0 w-full mb-1 group">
@@ -136,19 +157,16 @@
           Seleccionar Provincia
         </label>
         <select
-          name="carrera"
-          id="carrera"
+          name="cbx_provincia"
+          id="cbx_provincia"
           class="block w-full mt-1  px-3 border border-gray-300 bg-white shadow-sm focus:ring-blue-600 focus:border-blue-600 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500 focus:outline-none sm:text-sm [&>option]:text-gray-500"
           required
+          onchange="cambiar_provincia();"
+          tabindex="6"
         >
           <!-- Opciones del select -->
-          <option value="" disabled selected>Elige una opción</option>
-          <option value="carrera1">Salta</option>
-          <option value="carrera2">Buenos Aires</option>
-          <option value="carrera3">Misiones</option>
-          <option value="carrera4">Corrientes</option>
-          <option value="carrera5">Tucuman</option>
-          <!-- Agregar más opciones según sea necesario -->
+          <option value="" disabled selected>Seleccione Provincia</option>
+
         </select>
       </div>
       <div class="relative z-0 w-full mb-1 group">
@@ -159,29 +177,64 @@
           Seleccionar Sede
         </label>
         <select
-          name="carrera"
-          id="carrera"
+          name="cbx_sede"
+          id="cbx_sede"
           class="block w-full mt-1  px-3 border border-gray-300 bg-white shadow-sm focus:ring-blue-600 focus:border-blue-600 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500 focus:outline-none sm:text-sm [&>option]:text-gray-500"
           required
+          onchange="cambiar_sede();"
+          tabindex="7"
         >
           <!-- Opciones del select -->
-          <option value="" disabled selected>Elige una opción</option>
-          <option value="carrera1">Sede 1</option>
-          <option value="carrera2">Sede 2</option>
-          <option value="carrera3">Sede 3</option>
-          <option value="carrera4">Sede 4</option>
-          <option value="carrera5">Sede 5</option>
-          <!-- Agregar más opciones según sea necesario -->
+          <option value="" disabled selected>Seleccione Sede</option>
+        </select>
+      </div>
+      <div class="relative z-0 w-full mb-1 group">
+        <label
+          for="carrera"
+          class="block text-sm font-medium text-gray-500 dark:text-gray-400"
+        >
+        Seleccione Carrera
+        </label>
+        <select
+          name="cbx_carrera"
+          id="cbx_carrera"
+          class="block w-full mt-1  px-3 border border-gray-300 bg-white shadow-sm focus:ring-blue-600 focus:border-blue-600 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500 focus:outline-none sm:text-sm [&>option]:text-gray-500"
+          required
+          tabindex="8"
+        >
+          <!-- Opciones del select -->
+          <option value="" disabled selected>Seleccione Carrera</option>
+        </select>
+      </div>
+      <div class="relative z-0 w-full mb-1 group">
+        <label
+          for="tel"
+          class="block text-sm font-medium text-gray-500 dark:text-gray-400"
+        >
+        Seleccione Carrera
+        </label>
+
+        <select
+          name="tipo_tel"
+          id=""
+          class="block w-full mt-1  px-3 border border-gray-300 bg-white shadow-sm focus:ring-blue-600 focus:border-blue-600 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500 focus:outline-none sm:text-sm [&>option]:text-gray-500"
+          required
+          tabindex="9"
+          onchange="telefonoOnChange(this);"
+        >
+          <!-- Opciones del select -->
+          <option value="cel" style="padding:0px;">Cel</option>
+          <option value="fijo" style="padding:0px;">Fijo</option>
         </select>
       </div>
 
       <div class="grid md:grid-cols-2 md:gap-6 mb-2 mt-2">
         <div class="relative z-0 w-full  group">
           <input
-            type="tel"
+            type="text"
             pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-            name="floating_phone"
-            id="floating_phone"
+            name="ddi_pais"
+            id="phone"
             class="block  px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             placeholder=" "
             required
@@ -189,17 +242,34 @@
           <label
             for="floating_phone"
             class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-            >Phone number</label
+            >Num. Celular</label
           >
         </div>
         <div class="relative z-0 w-full mb-1 group">
           <input
             type="text"
-            name="floating_company"
-            id="floating_company"
+            name="ddi_pais"
+            id="phone"
             class="block  px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-            placeholder=" "
+            placeholder="Cod."
             required
+            tabindex="10"
+          />
+          <label
+            for="floating_company"
+            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >Cod.</label
+          >
+        </div>
+        <div class="relative z-0 w-full mb-1 group">
+          <input
+            type="text"
+            name="tel"
+        
+            class="block  px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            placeholder="tel&eacute;fono"
+            required
+            tabindex="11"
           />
           <label
             for="floating_company"
