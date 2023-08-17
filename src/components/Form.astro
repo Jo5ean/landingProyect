@@ -69,7 +69,7 @@
             name="Nombre"
             id="nombre"
             class="block  px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-            placeholder="Nombre"
+            placeholder=" "
             required
             tabindex="1"
           />
@@ -85,7 +85,7 @@
             name="Apellido"
             id="apellido"
             class="block  px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-            placeholder="Apellido"
+            placeholder=" "
             required
             tabindex="2"
           />
@@ -102,7 +102,7 @@
           name="email"
           id="email"
           class="block  px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-          placeholder="Escribe tu email"
+          placeholder=" "
           required
           tabindex="3"
         />
@@ -118,7 +118,7 @@
           name="dni"
           id="dni"
           class="block  px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-          placeholder="DNI Para participar en nuestras promociones"
+          placeholder=" "
           required
           tabindex="4"
         />
@@ -149,45 +149,47 @@
                   <option value="7">Distancia</option>
         </select>
       </div>
-      <div class="relative z-0 w-full mb-1 group">
-        <label
-          for="carrera"
-          class="block text-sm font-medium text-gray-500 dark:text-gray-400"
-        >
-          Seleccionar Provincia
-        </label>
-        <select
-          name="cbx_provincia"
-          id="cbx_provincia"
-          class="block w-full mt-1  px-3 border border-gray-300 bg-white shadow-sm focus:ring-blue-600 focus:border-blue-600 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500 focus:outline-none sm:text-sm [&>option]:text-gray-500"
-          required
-          onchange="cambiar_provincia();"
-          tabindex="6"
-        >
-          <!-- Opciones del select -->
-          <option value="" disabled selected>Seleccione Provincia</option>
-
-        </select>
+      <div class="flex space-x-4">
+        <div class="relative z-0 w-full mb-1 group">
+          <label
+            for="carrera"
+            class="block text-sm font-medium text-gray-500 dark:text-gray-400"
+          >
+            Seleccionar Provincia
+          </label>
+          <select
+            name="cbx_provincia"
+            id="cbx_provincia"
+            class="block w-full mt-1  px-3 border border-gray-300 bg-white shadow-sm focus:ring-blue-600 focus:border-blue-600 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500 focus:outline-none sm:text-sm [&>option]:text-gray-500"
+            required
+            onchange="cambiar_provincia();"
+            tabindex="6"
+          >
+            <!-- Opciones del select -->
+            <option value="" disabled selected>Seleccione Provincia</option>
+          </select>
+        </div>
+        <div class="relative z-0 w-full mb-1 group">
+          <label
+            for="carrera"
+            class="block text-sm font-medium text-gray-500 dark:text-gray-400"
+          >
+            Seleccionar Sede
+          </label>
+          <select
+            name="cbx_sede"
+            id="cbx_sede"
+            class="block w-full mt-1  px-3 border border-gray-300 bg-white shadow-sm focus:ring-blue-600 focus:border-blue-600 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500 focus:outline-none sm:text-sm [&>option]:text-gray-500"
+            required
+            onchange="cambiar_sede();"
+            tabindex="7"
+          >
+            <!-- Opciones del select -->
+            <option value="" disabled selected>Seleccione Sede</option>
+          </select>
+        </div>
       </div>
-      <div class="relative z-0 w-full mb-1 group">
-        <label
-          for="carrera"
-          class="block text-sm font-medium text-gray-500 dark:text-gray-400"
-        >
-          Seleccionar Sede
-        </label>
-        <select
-          name="cbx_sede"
-          id="cbx_sede"
-          class="block w-full mt-1  px-3 border border-gray-300 bg-white shadow-sm focus:ring-blue-600 focus:border-blue-600 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500 focus:outline-none sm:text-sm [&>option]:text-gray-500"
-          required
-          onchange="cambiar_sede();"
-          tabindex="7"
-        >
-          <!-- Opciones del select -->
-          <option value="" disabled selected>Seleccione Sede</option>
-        </select>
-      </div>
+      
       <div class="relative z-0 w-full mb-1 group">
         <label
           for="carrera"
@@ -206,79 +208,64 @@
           <option value="" disabled selected>Seleccione Carrera</option>
         </select>
       </div>
-      <div class="relative z-0 w-full mb-1 group">
-        <label
-          for="tel"
-          class="block text-sm font-medium text-gray-500 dark:text-gray-400"
-        >
-        Seleccione Carrera
-        </label>
-
-        <select
-          name="tipo_tel"
-          id=""
-          class="block w-full mt-1  px-3 border border-gray-300 bg-white shadow-sm focus:ring-blue-600 focus:border-blue-600 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500 focus:outline-none sm:text-sm [&>option]:text-gray-500"
-          required
-          tabindex="9"
-          onchange="telefonoOnChange(this);"
-        >
-          <!-- Opciones del select -->
-          <option value="cel" style="padding:0px;">Cel</option>
-          <option value="fijo" style="padding:0px;">Fijo</option>
-        </select>
-      </div>
-
-      <div class="grid md:grid-cols-2 md:gap-6 mb-2 mt-2">
-        <div class="relative z-0 w-full  group">
-          <input
-            type="text"
-            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-            name="ddi_pais"
-            id="phone"
-            class="block  px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-            placeholder=" "
-            required
-          />
-          <label
-            for="floating_phone"
-            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-            >Num. Celular</label
-          >
+      <div class="flex space-x-4">
+        <div class="relative z-0 w-full group">     
+            <label
+              for="tel"
+              class="block text-sm font-medium text-gray-500 dark:text-gray-400"
+            >
+            Seleccione Carrera
+            </label>
+            <select
+              name="tipo_tel"
+              id=""
+              class="block w-full mt-1  px-3 border border-gray-300 bg-white shadow-sm focus:ring-blue-600 focus:border-blue-600 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500 focus:outline-none sm:text-sm [&>option]:text-gray-500"
+              required
+              tabindex="9"
+              onchange="telefonoOnChange(this);"
+            >
+              <!-- Opciones del select -->
+              <option value="cel" style="padding:0px;">Cel</option>
+              <option value="fijo" style="padding:0px;">Fijo</option>
+            </select>
         </div>
-        <div class="relative z-0 w-full mb-1 group">
+        <div class="relative z-0 w-full group" style="margin-top: 20px;">
           <input
             type="text"
             name="ddi_pais"
             id="phone"
-            class="block  px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-            placeholder="Cod."
+            class="block px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            placeholder=" "
             required
             tabindex="10"
           />
           <label
             for="floating_company"
-            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-            >Cod.</label
-          >
+            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform  scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+          >Cod.</label>
         </div>
-        <div class="relative z-0 w-full mb-1 group">
-          <input
-            type="text"
-            name="tel"
         
-            class="block  px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-            placeholder="tel&eacute;fono"
-            required
-            tabindex="11"
-          />
-          <label
-            for="floating_company"
-            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-            >Company</label
-          >
+        <div class="relative z-0 w-full group" style="margin-top: 20px;">
+          <div class="relative z-0 w-full group">
+            <input
+              type="text"
+              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+              name="ddi_pais"
+              id="phone"
+              class="block  px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
+              required
+            />
+            <label
+              for="floating_phone"
+              class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform  scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >Num. Celular</label
+            >
+          </div>
         </div>
+        
       </div>
-      <div class="flex justify-center">
+      <div class="flex justify-center mt-2">
         <button
           type="submit"
           class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"

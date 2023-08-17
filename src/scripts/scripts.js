@@ -1,8 +1,8 @@
-  
+
     // funcion asincrona anonima autoejecutable c:
     (async () => {
         const resp = await fetch(
-          `https://www-desa.ucasal.edu.ar/landing/consultas/getCarrerasJson.php?tipcar=Grado,Pregrado,Intermedio`
+          `./arrayCarreras.json`
         );
         const data = await resp.json();
   
