@@ -1,15 +1,23 @@
 
     // funcion asincrona anonima autoejecutable c:
     (async () => {
-        const resp = await fetch(
+        const resp1 = await fetch(
           `./arrayCarreras.json`
         );
-        const data = await resp.json();
+        const data1 = await resp1.json();
+        const resp2 = await fetch(
+          `./carreras.json`
+        );
+        const data2 = await resp2.json();
   
         //guardo el listado en un almacenamiento local
         window.localStorage.setItem(
           "CarrerasModGeneral",
-          JSON.stringify(data)
+          JSON.stringify(data1)
+        );
+        window.localStorage.setItem(
+          "DatosCartas",
+          JSON.stringify(data2)
         );
       })();
 
