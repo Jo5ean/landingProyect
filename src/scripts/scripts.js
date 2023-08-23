@@ -161,7 +161,7 @@
       window.localStorage.getItem("CarrerasModGeneral")
     );
 
-    console.log("Modo", modo);
+    /* console.log("Modo", modo); */
 
     const carrerasMod = carrerasArray.filter(carreras => carreras.modo == modo);
 
@@ -498,4 +498,4 @@
       //var markerCluster = new MarkerClusterer(map, markers,{imagePath: '/js/mapsgoogle/m'});
     });
 
-  }
+}

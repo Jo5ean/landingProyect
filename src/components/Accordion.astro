@@ -2,27 +2,31 @@
 import Card from "./Card.astro";
 import {datita} from "../scripts/datita.js";
 import {facus} from "../scripts/facultades.js";
+import {detectScreenSize} from "../scripts/ancho.js";
 ---
-<div id="accordion-collapse" class="mx-5" data-accordion="collapse">
 
+<div id="accordion-collapse" class="mx-5" data-accordion="collapse">
   {facus.map((facultad, index) => (
     <div key={index}>
       {index === 6 && (
         <div class="flex justify-center items-center">
-  <a href="https://ucasal.edu.ar/inscripciones" target="_blank">
-    <div class="max-w-full">
-      <video width="100%" id="banner" preload autoplay loop muted>
-        <source src="/banner.mp4" type="video/mp4">
-        <source src="/banner.ogg" type="video/ogg">
-      </video>
-    </div>
-  </a>
-</div>
-
+          <a href="https://ucasal.edu.ar/inscripciones" target="_blank">
+            <div class="max-w-full">
+              <video width="100%" id="banner" preload autoplay loop muted>
+                <source src="/banner.mp4" type="video/mp4" />
+                <source src="/banner.ogg" type="video/ogg" />
+              </video>
+            </div>
+          </a>
+        </div>
       )}
-  
-      <h2 id={`accordion-collapse-heading-${index}`} class="text-center">
+
+      <h2
+        id={`accordion-collapse-heading-${index}`}
+        class="text-center"
+      >
         <button
+          onclick={detectScreenSize()}
           type="button"
           class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200"
           data-accordion-target={`#accordion-collapse-body-${index}`}
@@ -31,10 +35,10 @@ import {facus} from "../scripts/facultades.js";
         >
           <img
             class="w-10 h-auto"
-            src="/13.svg"
+            src={`/${facultad.codare}.svg`}
             alt="icono ingenieria"
           />
-          <span class="mx-auto font-semibold">{facultad.nombre}</span>
+          <span class="text-center font-semibold">{facultad.nombre}</span>
           <svg
             data-accordion-icon
             class="w-3 h-3 rotate-180 shrink-0"
@@ -74,7 +78,4 @@ import {facus} from "../scripts/facultades.js";
       </div>
     </div>
   ))}
-  
-  
-  </div>
-  
+</div>

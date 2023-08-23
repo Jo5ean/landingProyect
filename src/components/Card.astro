@@ -14,11 +14,14 @@ const {
   duracion,
 } = Astro.props 
 ---
-<div class="flex justify-center mb-5 mx-auto" style="width: 250px; height: 360px;">
-  <div class="max-w-lg rounded-2xl overflow-hidden shadow-lg relative transition-transform hover:scale-105 hover:shadow-xl border-2">
+<div class="flex justify-center mb-5 mx-auto" style="width: 240px; height: 360px;">
+  <div class="max-w-lg w-full h-full rounded-2xl overflow-hidden shadow-lg relative transition-transform hover:scale-105 hover:shadow-xl border-2">
     <!-- Parte 1: Imagen -->
-    <div class="bg-cover bg-center h-52" style=`background-image: url('../../${codcar}.webp');`></div>
-
+    <div class="relative h-52">
+      <div class="bg-cover bg-center h-full" style={`background-image: url('../../${codcar}.webp'); background-size: cover;`}></div>
+      <div class="absolute inset-0 transition-opacity opacity-0 hover:opacity-100" style={`background-image: url('../../${codcar}-hover.webp'); background-size: cover;`}></div>
+    </div>
+    
     <!-- Parte 2: Icono -->
     <img class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-[5%] w-20 h-14" src=`https://www.ucasal.edu.ar/landing/img/img-test/cardIcons/${codare}.svg` alt="icono carta">
 
@@ -43,3 +46,4 @@ const {
     </div>
   </div>
 </div>
+
