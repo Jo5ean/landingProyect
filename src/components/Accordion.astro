@@ -2,19 +2,19 @@
 import Card from "./Card.astro";
 import {datita} from "../scripts/datita.js";
 import {facus} from "../scripts/facultades.js";
-import {detectScreenSize} from "../scripts/ancho.js";
 ---
 
-<div id="accordion-collapse" class="mx-5" data-accordion="collapse">
+
+<div id="accordion-collapse" class="mx-5 lg:mx-20" data-accordion="collapse">
   {facus.map((facultad, index) => (
-    <div key={index}>
+    <div >
       {index === 6 && (
         <div class="flex justify-center items-center">
           <a href="https://ucasal.edu.ar/inscripciones" target="_blank">
             <div class="max-w-full">
-              <video width="100%" id="banner" preload autoplay loop muted>
-                <source src="/banner.mp4" type="video/mp4" />
-                <source src="/banner.ogg" type="video/ogg" />
+              <video width="100%" id="banner" autoplay loop muted>
+                <source src="/bannerNacho6.mp4" type="video/mp4" />
+                <source src="/bannerNacho6.ogg" type="video/ogg" />
               </video>
             </div>
           </a>
@@ -26,7 +26,6 @@ import {detectScreenSize} from "../scripts/ancho.js";
         class="text-center"
       >
         <button
-          onclick={detectScreenSize()}
           type="button"
           class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200"
           data-accordion-target={`#accordion-collapse-body-${index}`}
@@ -35,7 +34,7 @@ import {detectScreenSize} from "../scripts/ancho.js";
         >
           <img
             class="w-10 h-auto"
-            src={`/${facultad.codare}.svg`}
+            src={`./iconoCarrera/${facultad.codare}.svg`}
             alt="icono ingenieria"
           />
           <span class="text-center font-semibold">{facultad.nombre}</span>
@@ -57,12 +56,16 @@ import {detectScreenSize} from "../scripts/ancho.js";
           </svg>
         </button>
       </h2>
+
       <div
         id={`accordion-collapse-body-${index}`}
         class="hidden"
         aria-labelledby={`accordion-collapse-heading-${index}`}
       >
-        <div class="p-5 mb-5 grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 justify-center items-center">
+          /* aca va la logica diferenciada */
+
+        /* CARTAS INDIVIDUALES (DESKTOP) */
+        <div class="p-5 mb-5 grid 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 justify-center items-center">
           {datita
             .filter((item) => item.codare === facultad.codare)
             .map(({ codcar, nombre, codare, modo, duracion }) => (
@@ -76,6 +79,55 @@ import {detectScreenSize} from "../scripts/ancho.js";
             ))}
         </div>
       </div>
+      /* CARTAS CARRUSEL (MOBIL) */
+      <div id="controls-carousel" class="relative" data-carousel="static">
+        <div class="relative h-[600px] overflow-hidden rounded-lg">
+            <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+              <div class="relative grid grid-cols-2">
+                /* aca van las 4 cards: */
+                 <div class="flex justify-end w-full p-3">
+                  <CardMobile />
+                 </div>
+              </div>
+            </div>
+        </div>
+         /* Indicadores de slide, cada 4 cartas (1 slide) va otro indicador */        
+        <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
+          <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+        </div>
+
+<!-- Slider controls -->
+        <button type="button" class="absolute top-[-20px] left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+          <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+              <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+             </svg>
+             <span class="sr-only">Previous</span>
+          </span>
+        </button>
+<button type="button" class="absolute top-[-20px] right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+  <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+      <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+      </svg>
+      <span class="sr-only">Next</span>
+  </span>
+</button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </div>
   ))}
 </div>
