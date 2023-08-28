@@ -2,12 +2,13 @@
 import Card from "./Card.astro";
 import {datita} from "../scripts/datita.js";
 import {facus} from "../scripts/facultades.js";
+import CardMobile from "./CardMobile.astro";
 ---
 
 
 <div id="accordion-collapse" class="mx-5 lg:mx-20" data-accordion="collapse">
   {facus.map((facultad, index) => (
-    <div >
+    <div>
       {index === 6 && (
         <div class="flex justify-center items-center">
           <a href="https://ucasal.edu.ar/inscripciones" target="_blank">
@@ -62,10 +63,8 @@ import {facus} from "../scripts/facultades.js";
         class="hidden"
         aria-labelledby={`accordion-collapse-heading-${index}`}
       >
-          /* aca va la logica diferenciada */
-
-        /* CARTAS INDIVIDUALES (DESKTOP) */
-        <div class="p-5 mb-5 grid 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 justify-center items-center">
+        
+        <div class="p-5 mb-5 grid 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 hidden lg:grid md:grid-cols-2 sm:grid-cols-1 just580er items-center">
           {datita
             .filter((item) => item.codare === facultad.codare)
             .map(({ codcar, nombre, codare, modo, duracion }) => (
@@ -78,56 +77,69 @@ import {facus} from "../scripts/facultades.js";
               />
             ))}
         </div>
-      </div>
-      /* CARTAS CARRUSEL (MOBIL) */
-      <div id="controls-carousel" class="relative" data-carousel="static">
-        <div class="relative h-[600px] overflow-hidden rounded-lg">
-            <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-              <div class="relative grid grid-cols-2">
-                /* aca van las 4 cards: */
-                 <div class="flex justify-end w-full p-3">
-                  <CardMobile />
-                 </div>
-              </div>
-            </div>
-        </div>
-         /* Indicadores de slide, cada 4 cartas (1 slide) va otro indicador */        
-        <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
-          <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-        </div>
+        <div id="controls-carousel" class="relative lg:hidden md:block sm:block" data-carousel="static">
+  <div class="relative h-[600px] overflow-hidden rounded-lg">
+    <div class="carousel-container">
+  {(() => {
+    const filteredItems = datita.filter((item) => item.codare === facultad.codare);
+    const totalSlides = Math.ceil(filteredItems.length / 4);
 
-<!-- Slider controls -->
-        <button type="button" class="absolute top-[-20px] left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-          <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-              <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
-             </svg>
-             <span class="sr-only">Previous</span>
-          </span>
-        </button>
+    const slides = [];
+    for (let i = 0; i < totalSlides; i++) {
+      const slideItems = filteredItems.slice(i * 4, i * 4 + 4); // Obtener hasta 4 elementos para esta slide
+      
+      // Si hay menos de 4 elementos disponibles, ajustar la cantidad de elementos por diapositiva
+      const numItemsInSlide = slideItems.length > 0 ? slideItems.length : 1;
+
+      slides.push(
+        <div
+          class={`hidden duration-700 ease-in-out ${
+            i === 0 ? 'active' : ''
+          }`}
+          data-carousel-item={i === 0 ? 'active' : ''}
+        >
+          <div class="relative grid grid-cols-2">
+            {slideItems.map((item, cardIndex) => (
+              <div class={`flex justify-center w-full p-3`}>
+                <CardMobile
+                  codcar={item.codcar.toString()}
+                  nombre={item.nombre}
+                  codare={item.codare.toString()}
+                  modo={item.modo.toString()}
+                  duracion={item.duracion}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+    }
+    return slides;
+  })()}
+</div>
+
+  </div>
+  
+  <button type="button" class="absolute top-[-20px] left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group       focus:outline-none" data-carousel-prev>
+  <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gray-800/50 group-hover:bg-gray-800/80 group-focus:ring-4 group-focus:ring-white  group-focus:outline-none">
+      <svg class="w-4 h-4 text-white " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+     </svg>
+     <span class="sr-only">Previous</span>
+  </span>
+</button>
 <button type="button" class="absolute top-[-20px] right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-  <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-      <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+ <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gray-800/50 group-hover:bg-gray-800/80 group-focus:ring-4 group-focus:ring-white  group-focus:outline-none">
+      <svg class="w-4 h-4 text-white " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-      </svg>
+     </svg>
       <span class="sr-only">Next</span>
   </span>
 </button>
 </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+      </div>
     </div>
   ))}
 </div>
