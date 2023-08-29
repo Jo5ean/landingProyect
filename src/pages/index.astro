@@ -91,12 +91,13 @@ const icons = [
       >&nbsp;UNIVERSITARIA!:
     </h2>
     <section class="mt-5 flex flex-col justify-center items-center" id="seccion-experiencia">
-      <div class="max-w-4xl">
-        <div class="flex flex-wrap -mx-2">
+
+      <div class="max-w-4xl hidden lg:block md:hidden sm:hidden">
+        <div class="flex flex-wrap -mx-2 ">
           {images.map((image, index) => (
             <div class="w-full sm:w-1/2 md:w-1/4 px-2">
               <div class="mb-4">
-                <div class="card" style={{ border: "none" }}>
+                <div class="card">
                   <img
                     src={image.src}
                     class="w-full h-auto shadow rounded"
@@ -111,17 +112,96 @@ const icons = [
           ))}
         </div>
       </div>
-      <div class="relative z-10 mt-5 mb-10 mx-auto w-3/5 max-w-xs">
+        <div id="indicators-carousel" class="relative w-full block lg:hidden md:block sm:block" data-carousel="static">
+
+          <!-- Carousel wrapper -->
+        <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+      <!-- Item 1 -->
+      <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+          <div class="flex flex-col items-center justify-center absolute w-full h-full">
+              <img src="./potencia/Campus.JPG" class="block w-3/5 shadow-xl" alt="Áreas de descanso">
+              <p class="texto-clases text-center font-bold mt-3">Áreas de descanso</p>
+          </div>
+      </div>
+      <!-- Item 2 -->
+      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <div class="flex flex-col items-center justify-center absolute w-full h-full">
+              <img src="./potencia/Biblioteca.jpg" class="block w-3/5 shadow-xl" alt="Biblioteca y sala de networking">
+              <p class="texto-clases text-center font-bold mt-3">Biblioteca y sala de networking</p>
+          </div>
+      </div>
+      <!-- Item 3 -->
+      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <div class="flex flex-col items-center justify-center absolute w-full h-full">
+              <img src="./potencia/Laboratorio.JPG" class="block w-3/5 shadow-xl" alt="Laboratorios">
+              <p class="texto-clases text-center font-bold mt-3">Laboratorios</p>
+          </div>
+      </div>
+      <!-- Item 4 -->
+      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <div class="flex flex-col items-center justify-center absolute w-full h-full">
+              <img src="./potencia/Veterinaria.jpg" class="block w-3/5 shadow-xl" alt="Hospital Escuela">
+              <p class="texto-clases text-center font-bold mt-3">Hospital Escuela</p>
+          </div>
+      </div>
+      <!-- Item 5 -->
+      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <div class="flex flex-col items-center justify-center absolute w-full h-full">
+              <img src="./potencia/Capilla.jpg" class="block w-3/5 shadow-xl" alt="Capilla y Acción Pastoral">
+              <p class="texto-clases text-center font-bold mt-3">Capilla y Acción Pastoral</p>
+          </div>
+      </div>
+      <!-- Item 6 -->
+      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <div class="flex flex-col items-center justify-center absolute w-full h-full">
+              <img src="./potencia/Radio y TV.jpg" class="block w-3/5 shadow-xl" alt="Estudio de Radio y Tv">
+              <p class="texto-clases text-center font-bold mt-3">Estudio de Radio y Tv</p>
+          </div>
+      </div>
+      <!-- Item 7 -->
+      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <div class="flex flex-col items-center justify-center absolute w-full h-full">
+              <img src="./potencia/Pileta.jpg" class="block w-3/5 shadow-xl" alt="Instalaciones Deportivas">
+              <p class="texto-clases text-center font-bold mt-3">Instalaciones Deportivas</p>
+          </div>
+      </div>
+      <!-- Item 8 -->
+      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <div class="flex flex-col items-center justify-center absolute w-full h-full">
+              <img src="./potencia/Bosque.jpg" class="block w-3/5 shadow-xl" alt="Espacios verdes">
+              <p class="texto-clases text-center font-bold mt-3">Espacios verdes</p>
+          </div>
+      </div>
+        </div>
+
+          <!-- Slider controls -->
+          <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-400 dark:bg-gray-800/30 group-hover:bg-gray-600 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                </svg>
+                <span class="sr-only">Previous</span>
+            </span>
+        </button>
+        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-400 dark:bg-gray-800/30 group-hover:bg-gray-600 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                </svg>
+                <span class="sr-only">Next</span>
+            </span>
+        </button>
+        </div>
         <a href="#form-section" class="block text-white bg-orange-700 border border-white rounded-lg text-base font-medium py-2 px-3 text-center transition-transform transform-gpu hover:scale-105 hover:bg-orange-600">
           ¡Más Info!
         </a>
-      </div>    
     </section>
-    
+
     <h2 class="lg:mx-20 bigTitle px-5 mt-5 shadow-black">
       <span style="color: rgb(97, 96, 96)">Razones para elegir</span
       >&nbsp;UCASAL:
     </h2>
+    <div class="hidden lg:block md:hidden sm:hidden">
     <div class="flex justify-center items-center">
      <div class="container d-none lg:d-block md:d-block sm:d-none mb-5">
       <div class="grid grid-cols-6 gap-4 mx-auto">
@@ -134,18 +214,86 @@ const icons = [
       </div>
     </div>
     </div>
+    </div>
  
+    <div id="indicators-carousel" class="relative w-full block lg:hidden md:block sm:block" data-carousel="static">
+    <!-- Carousel wrapper -->
+    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+      <!-- Item 1 -->
+      <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+          <div class="flex flex-col items-center justify-center absolute w-full h-full">
+              <img src="./razones/Becas.svg" class="block w-2/4" alt="becas">
+              <p class="texto-clases text-center font-bold">Becas</p>
+          </div>
+      </div>
+      <!-- Item 2 -->
+      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <div class="flex flex-col items-center justify-center absolute w-full h-full">
+              <img src="./razones/Prog. Internacionales.svg" class="block w-2/4" alt="programas internacionales">
+              <p class="texto-clases text-center font-bold">Programas Internacionales</p>
+          </div>
+      </div>
+      <!-- Item 3 -->
+      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <div class="flex flex-col items-center justify-center absolute w-full h-full">
+              <img src="./razones/Idiomas.svg" class="block w-2/4" alt="idiomas">
+              <p class="texto-clases text-center font-bold">Idiomas</p>
+          </div>
+      </div>
+      <!-- Item 4 -->
+      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <div class="flex flex-col items-center justify-center absolute w-full h-full">
+              <img src="./razones/Pasantias.svg" class="block w-2/4" alt="pasantias">
+              <p class="texto-clases text-center font-bold">Pasantías</p>
+          </div>
+      </div>
+      <!-- Item 5 -->
+      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <div class="flex flex-col items-center justify-center absolute w-full h-full">
+              <img src="./razones/Bolsa de Trabajo.svg" class="block w-2/4" alt="bolsa de trabajo">
+              <p class="texto-clases text-center font-bold">Bolsa de Trabajo</p>
+          </div>
+      </div>
+      <!-- Item 6 -->
+      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <div class="flex flex-col items-center justify-center absolute w-full h-full">
+              <img src="./razones/Orientacion.svg" class="block w-2/4" alt="centro de orientacion educativa">
+              <p class="texto-clases text-center font-bold">Centro de Orientación Educativa</p>
+          </div>
+      </div>
+  </div>
+  
+
+    <!-- Slider controls -->
+    <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-400 dark:bg-gray-800/30 group-hover:bg-gray-600 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+            </svg>
+            <span class="sr-only">Previous</span>
+        </span>
+    </button>
+    <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-400 dark:bg-gray-800/30 group-hover:bg-gray-600 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+            </svg>
+            <span class="sr-only">Next</span>
+        </span>
+    </button>
+    </div>
+
     <section class="seccion" id="sedes">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4 mx-5 lg:mx-20">
         <!-- Fila 1, Columna 1 - Mapa de Sedes -->
         <div class="flex flex-col justify-start">
-          <h2 class="bigTitle px-5 my-5 shadow-black"><span style="color: rgb(97, 96, 96)">Nuestras</span>&nbsp;SEDES:</h2>
+          <h2 class="bigTitle lg:px-5 my-5 shadow-black"><span style="color: rgb(97, 96, 96)">Nuestras</span>&nbsp;SEDES:</h2>
           <iframe src="https://ucasal.edu.ar/mapa_sedes/mapa_sedes_ucasal.html" style="height: 45vh;width:100%; border: 0;" allowfullscreen></iframe>
         </div>
     
         <!-- Fila 1, Columna 2 - Recorrido 360 -->
         <div class="flex flex-col justify-start">
-          <h2 class="bigTitle px-5 my-5 shadow-black"><span style="color: rgb(97, 96, 96)">Nuestro</span>&nbsp;CAMPUS:</h2>
+          <h2 class="bigTitle lg:px-5 my-5 shadow-black"><span style="color: rgb(97, 96, 96)">Nuestro</span>&nbsp;CAMPUS:</h2>
           <iframe src="https://ucasal.edu.ar/recorrido360/" style="width: 100%; height: 100%;" class="video shadow"></iframe>
         </div>
       </div>
@@ -157,7 +305,7 @@ const icons = [
         <div class="flex justify-center">
           <div class="relative z-10 mx-auto w-3/5 max-w-xs drop-shadow-2xl">
             <a href="#form-section" class="block text-white bg-orange-700 border border-white rounded-lg text-base font-medium py-2 px-3 text-center transition-transform transform-gpu hover:scale-105 hover:bg-orange-600">
-              ¡Más Info!
+              ¡Más Info! 📝
             </a>
           </div>
         </div>
@@ -166,20 +314,18 @@ const icons = [
         <div class="flex justify-center">
           <div class="relative z-10 mx-auto w-3/5 max-w-xs drop-shadow-2xl">
             <a href="#form-section" class="block text-white bg-orange-700 border border-white rounded-lg text-base font-medium py-2 px-3 text-center transition-transform transform-gpu hover:scale-105 hover:bg-orange-600">
-              ¡Más Info!
+              ¡Quiero Inscribirme Online! 💻
             </a>
           </div>
         </div>
       </div>
     </section>
     
-
   <!-- Espacio en blanco -->
   <div class="bg-grey-300 h-10">
   <Footer />
   </div>
   
-
 <!-- <Carousel /> -->
 <script src="/src/scripts/scripts.js" is:inline></script>
 

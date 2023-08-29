@@ -1,5 +1,5 @@
 const facus =[
-    {
+     {
       "nombre": "FACULTAD DE INGENIERIA",
       "codare": 14,
     },
@@ -10,12 +10,12 @@ const facus =[
     {
       "nombre": "FACULTAD DE ARQUITECTURA Y URBANISMO",
       "codare": 15,
-    },
+    }, 
     {
       "nombre": "FACULTAD DE CIENCIAS AGRARIAS Y VETERINARIAS",
       "codare": 19,
     },
-    {
+     {
       "nombre": "FACULTAD DE CIENCIAS JURIDICAS",
       "codare": 13,
     },
@@ -30,12 +30,12 @@ const facus =[
     {
       "nombre": "FACULTAD DE EDUCACION FISICA",
       "codare": 17,
-    },
+    }, 
     {
       "nombre": "FACULTAD DE MUSICA",
       "codare": 21,
     },
-    {
+     {
       "nombre": "FACULTAD DE TEOLOGIA Y FILOSOFIA",
       "codare": 111,
     },
@@ -50,7 +50,7 @@ const facus =[
     {
       "nombre": "FACULTAD DE TRABAJO SOCIAL",
       "codare": 16,
-    }
+    } 
   ]
 
   export {facus}
